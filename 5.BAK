@@ -1,0 +1,15 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{clrscr();
+ int x,i=0;
+ printf("Enter a number: ");
+ scanf("%d",&x);
+ do
+ {if(x%2==0)
+   printf("The given number is even number");
+  else
+   printf("The given number is odd number");
+ }while(i!=0);
+ getch();
+}
