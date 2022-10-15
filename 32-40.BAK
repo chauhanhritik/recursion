@@ -1,0 +1,119 @@
+#include<stdio.h>
+#include<conio.h>
+#include<string.h>
+
+void count(char ch[])
+{ int i;
+  for(i=0;ch[i]!=0;i++);
+  printf("The string has %d characters",i);
+}
+
+void length(char ch[])
+{
+  printf("The string has %d characters",strlen(ch));
+}
+
+void copy(char ch[])
+{
+  char ch2[]="  ";
+  strcpy(ch2,ch);
+  printf("The copied string is %s",ch2);
+}
+
+void compc(char ch[])
+{
+  char ch2[]="  ";
+  printf("Enter second string\n");
+  gets(ch2);
+  if(strcmp(ch,ch2)==0)
+  printf("They are same");
+  else
+  printf("They are not same");
+}
+
+void comp(char ch[])
+{
+  char ch2[]="  ";
+  printf("Enter second string\n");
+  gets(ch2);
+  if(strcmpi(ch,ch2)==0)
+  printf("They are same");
+  else
+  printf("They are not same");
+}
+
+void cat(char ch[])
+{ char ch2[]="  ";
+  printf("Enter second string\n");
+  gets(ch2);
+  strcat(ch,ch2);
+  printf("The concatenated string is %s",ch);
+}
+
+void upper(char ch[])
+{
+  printf(strupr(ch));
+}
+
+void lower(char ch[])
+{
+  printf(strlwr(ch));
+}
+
+void reverse(char ch[])
+{
+  strrev(ch);
+  printf("The reversed string is %s",ch);
+}
+
+void main()
+{ int c;
+  char ch[]="  ";
+  clrscr();
+  printf("Enter a string\n");
+  gets(ch);
+  printf("1. Count no. of characters \n2. Calculate length of string\n");
+  printf("3. Copy strings \n4. Compare 2 string(case sensitive) \n");
+  printf("5. Compare 2 strings(not case sensitive) \n");
+  printf("6. Convert string to uppercase \n7. Convert string to lowercase \n");
+  printf("8. Reverse the string\n");
+  scanf("%d",&c);
+  switch (c)
+  {
+	case 1:
+	count(ch);
+	break;
+
+	case 2:
+	length(ch);
+	break;
+
+	case 3:
+	copy(ch);
+	break;
+
+	case 4:
+	compc(ch);
+	break;
+
+	case 5:
+	comp(ch);
+	break;
+
+	case 6:
+	upper(ch);
+	break;
+
+	case 7:
+	lower(ch);
+	break;
+
+	case 8:
+	reverse(ch);
+	break;
+
+	default:
+	printf("You are not worthy");
+  }
+  getch();
+}

@@ -1,0 +1,14 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{clrscr();
+ int i=1,x;
+ printf("Enter the number: ");
+ scanf("%d",&x);
+ printf("\n\n");
+ do
+ {printf("%d x %d = %d \n",x,i,x*i);
+  i++;
+ }while(i<=10);
+ getch();
+}

@@ -7,6 +7,31 @@ using namespace std;
 // } Driver Code Ends
 class Solution
 {
+    private:
+    int memSolve(int n, vector<int> &dp){   //Function to compute answer using memoization
+        if(n<0) return 0; 
+        if(n<=1) return 1; //the 0th stair can be used to jump and then land back on it thus we return 1
+        
+        if(dp[n]!=-1) return dp[n]; //if the solution has already been calculated for the value of n, 
+                                    //then no need to calculate it again... use the stored value instead.
+        
+        dp[n] = countWays(n-1) + countWays(n-2); //n-1 and n-2 used as only 1 or 2 stairs can be jumped. Store the value in the DP array.
+        
+        return dp[n];
+    }
+    
+    int tabSolve(int n){
+        vector<int> dp(n+1, 0);
+        dp[0] = 1;
+        dp[1] = 1;
+        
+        for(int i=2; i<=n; i++){
+            dp[i]=dp[i-1]+dp[i-2];   
+        }
+        
+        return dp[n];
+    }
+    
     public:
     //Function to count number of ways to reach the nth stair.
     int countWays(int n)
@@ -17,6 +42,14 @@ class Solution
         
         return ans;
 
+    }
+    
+    int DPSolve(int n){
+        
+        return tabSolve(n);         //Tabulation Solution
+        
+        vector<int> dp(n+1, -1);    //DP array to store computed values
+        return memSolve(n, dp);     //Memoization Solution   
     }
 };
 
