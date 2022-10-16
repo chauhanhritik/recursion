@@ -2,12 +2,9 @@
 #include<iostream> 
 
 using namespace std; 
-void swap(int *a, int *b){
-
-}
 
 void bubbleSort(int * arr, int n){
-    if(n == 1) return;
+    if(n == 1 || n == 0) return;
     
     for (int i = 0; i < n-1; i++)
     {
