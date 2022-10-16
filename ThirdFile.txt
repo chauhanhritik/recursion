@@ -1,0 +1,14 @@
+RUN 1:
+Enter Number1: 10
+Enter Number2: 20
+The Greatest Common Divisor is: 10
+
+RUN 2:
+Enter Number1: 10
+Enter Number2: 225
+The Greatest Common Divisor is: 5
+
+RUN 3:
+Enter Number1: 117
+Enter Number2: 10
+The Greatest Common Divisor is: 1
